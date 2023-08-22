@@ -7,7 +7,7 @@
     "start": "node index.js",
     "server": "nodemon index.js"
   },
-  "author": "Jia",
+  "author": "Jia J",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

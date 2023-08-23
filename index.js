@@ -6,6 +6,9 @@ import BOOKS from 'books.js';
 const app = express();
 const port = 4000;
 
+const I_LOVE = require('./config')
+console.log('I love', I_LOVE)
+
 //Middleware
 app.use(cors());
 

@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "my first rest api",
   "main": "index.js",
+  "type" :"module",
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js"
   },
-  "author": "Jia J",
+  "author": "Jia Jiz de Ortega",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

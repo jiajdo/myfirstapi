@@ -25,5 +25,14 @@ app.get('/books', (req, res) => {
     res.json(BOOKS);
 })
 
+//Requests other pages with a placeholder address
+app.get('/books/:id', (req, res) => {
+    const {id} = req.params;
+    //prints what is in the URL
+    // console.log(req.params);
+    // console.log(id);
+
+
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

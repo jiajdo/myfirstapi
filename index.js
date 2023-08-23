@@ -1,13 +1,13 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import BOOKS from 'books.js';
+import BOOKS from './books.js';
+import 'dotenv/config'  
 
 const app = express();
 const port = 4000;
-
-const I_LOVE = require('./config')
-console.log('I love', I_LOVE)
+const ILOVE = process.env.I_LOVE;
+console.log('I love', ILOVE)
 
 //Middleware
 app.use(cors());
@@ -24,3 +24,6 @@ app.get('/', (req, res) => {
 app.get('/books', (req, res) => {
     res.json(BOOKS);
 })
+
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));

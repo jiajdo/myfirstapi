@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import BOOKS from './books.js';
-import 'dotenv/config'  
+import 'dotenv/config'
 
 const app = express();
 const port = 4000;
@@ -17,7 +17,7 @@ const _dirname = path.resolve();
 
 //Request for the homepage
 app.get('/', (req, res) => {
-    res.send('Hi, this is my homepage');
+    res.send(`Hi, this is my homepage ( ͡❛ ᴗ ͡❛)`);
 })
 
 //Requests books and converts to JSON format
@@ -27,21 +27,24 @@ app.get('/books', (req, res) => {
 
 //Requests other pages with a placeholder address
 app.get('/books/:id', (req, res) => {
-    const {id} = req.params;
+    const { id } = req.params;
     //prints what is in the URL
     // console.log(req.params);
     // console.log(id);
 
     //define a variable to find id value in books json
     const book = BOOKS.find(book => book.id === id);
-    //check if book exists. if not, send 404 error
+    //check if book id exists. if not, send 404 error
     if (!book) {
-
-    }    
-
+        res.status(404).send(`Sorry, I don't know what you're talking about  ¯\_( ͡❛ ᴗ ͡❛)_/¯`)
+    }
+    //if it does exist, show that book object    
+    res.json(book)
 })
 
 // app.get find a specific title
+app.get('/books/:title')
+
 
 //app.get find a specific genre
 

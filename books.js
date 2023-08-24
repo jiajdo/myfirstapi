@@ -65,8 +65,8 @@ const BOOKS = [
     },
     {
         "id": "10",
-        "title": "The Summer Book",
-        "author": "Tove Jansson",
+        "title": "Everyone in This Room Will Someday Be Dead",
+        "author": "Emily Austin",
         "format": "Hardcover",
         "genre": "fiction"
     }

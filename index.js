@@ -30,7 +30,7 @@ app.get('/books/:id', (req, res) => {
     const { id } = req.params;
     //prints what is in the URL
     // console.log(req.params);
-    // console.log(id);
+     //console.log(id);
 
     //define a variable to find id value in books json
     const book = BOOKS.find(book => book.id === id);
@@ -43,7 +43,18 @@ app.get('/books/:id', (req, res) => {
 })
 
 // app.get find a specific title
-app.get('/books/:title')
+app.get('/title/:title', (req, res) => {
+    const { title } = req.params;
+    console.log(title)
+
+    const bookTitle = BOOKS.find(title => title.title === title);
+    console.log(BOOKS[0].title)
+    console.log(bookTitle)
+    if (!bookTitle) {
+        res.status(404).send(`I don't have that title! (⊙.⊙(☉̃ₒ☉)⊙.⊙)`)
+    }
+    res.json(bookTitle)
+})
 
 
 //app.get find a specific genre

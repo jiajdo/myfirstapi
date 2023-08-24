@@ -42,7 +42,7 @@ app.get('/books/:id', (req, res) => {
     res.json(book)
 })
 
-// app.get find a specific title and show that element from the BOOKS json
+//find a specific title and show that element from the BOOKS json
 
 app.get('/title/:title', (req, res) => {
     const { title } = req.params;
@@ -54,7 +54,7 @@ app.get('/title/:title', (req, res) => {
 })
 
 
-
+//find a specific genre and show books only from that genre
 app.get('/genre/:genre', (req, res) => {
     const { genre } = req.params;
     //checking if it exists

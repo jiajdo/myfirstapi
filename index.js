@@ -30,7 +30,7 @@ app.get('/books/:id', (req, res) => {
     const { id } = req.params;
     //prints what is in the URL
     // console.log(req.params);
-     //console.log(id);
+    //console.log(id);
 
     //define a variable to find id value in books json
     const book = BOOKS.find(book => book.id === id);
@@ -43,6 +43,7 @@ app.get('/books/:id', (req, res) => {
 })
 
 // app.get find a specific title
+
 app.get('/title/:title', (req, res) => {
     const { title } = req.params;
     console.log(title)
@@ -58,5 +59,20 @@ app.get('/title/:title', (req, res) => {
 
 
 //app.get find a specific genre
+//I want to show only the books from a certain genre
+//if a book is fiction, show only fiction books from the json
+//if a book is nonfiction, show only nonfiction books from the json
+app.get('/genre/:genre', (req, res) => {
+    const { genre } = req.params;
+
+    const isBookFenre = BOOKS.find(genre => genre.genre === 'fiction')
+
+
+
+})
+
+app.all('*', (req, res) => {
+    res.status(404).send(`Sorry, you're valid, but that URL is not (>‿◠)✌ `)
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

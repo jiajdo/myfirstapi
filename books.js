@@ -55,6 +55,20 @@ const BOOKS = [
         "author": "Tove Jansson",
         "format": "Hardcover",
         "genre": "fiction"
+    },
+    {
+        "id": "9",
+        "title": "Our Share of Night",
+        "author": "Mariana Enriquez",
+        "format": "Hardcover",
+        "genre": "fiction"
+    },
+    {
+        "id": "10",
+        "title": "The Summer Book",
+        "author": "Tove Jansson",
+        "format": "Hardcover",
+        "genre": "fiction"
     }
 ];
 

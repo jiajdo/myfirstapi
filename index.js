@@ -36,7 +36,7 @@ app.get('/books/:id', (req, res) => {
     const book = BOOKS.find(book => book.id === id);
     //check if book id exists. if not, send 404 error
     if (!book) {
-        res.status(404).send(`Sorry, I don't know what you're talking about  ¯\_( ͡❛ ᴗ ͡❛)_/¯`)
+        res.status(404).send(`Sorry, I don't know what book you're talking about  ¯\_( ͡❛ ᴗ ͡❛)_/¯`)
     }
     //if it does exist, show that book object    
     res.json(book)
@@ -46,29 +46,26 @@ app.get('/books/:id', (req, res) => {
 
 app.get('/title/:title', (req, res) => {
     const { title } = req.params;
-    console.log(title)
-
-    const bookTitle = BOOKS.find(title => title.title === title);
-    console.log(BOOKS[0].title)
-    console.log(bookTitle)
-    if (!bookTitle) {
+    const bookTitle = BOOKS.find(book => book.title === title);
+    if (bookTitle === undefined) {
         res.status(404).send(`I don't have that title! (⊙.⊙(☉̃ₒ☉)⊙.⊙)`)
     }
     res.json(bookTitle)
 })
 
 
-//app.get find a specific genre
-//I want to show only the books from a certain genre
-//if a book is fiction, show only fiction books from the json
-//if a book is nonfiction, show only nonfiction books from the json
+
 app.get('/genre/:genre', (req, res) => {
     const { genre } = req.params;
+    //checking if it exists
+    const bookGenre = BOOKS.find(item => item.genre === genre)
 
-    const isBookFenre = BOOKS.find(genre => genre.genre === 'fiction')
-
-
-
+    if (bookGenre === undefined) {
+        res.status(404).send(`I don't have that genre! ʕ•́ᴥ•̀ʔっ`)
+    }
+    //filters books by genre
+    const books = BOOKS.filter((book) => book.genre === genre)
+    res.json(books)
 })
 
 app.all('*', (req, res) => {

@@ -32,7 +32,17 @@ app.get('/books/:id', (req, res) => {
     // console.log(req.params);
     // console.log(id);
 
+    //define a variable to find id value in books json
+    const book = BOOKS.find(book => book.id === id);
+    //check if book exists. if not, send 404 error
+    if (!book) {
+
+    }    
 
 })
+
+// app.get find a specific title
+
+//app.get find a specific genre
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

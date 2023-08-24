@@ -42,7 +42,7 @@ app.get('/books/:id', (req, res) => {
     res.json(book)
 })
 
-// app.get find a specific title
+// app.get find a specific title and show that element from the BOOKS json
 
 app.get('/title/:title', (req, res) => {
     const { title } = req.params;
